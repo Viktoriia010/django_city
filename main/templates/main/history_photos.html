@@ -1,0 +1,132 @@
+
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="wrap hero">
+    <div>
+        <span class="eyebrow">Фотографії · Архіви · Спогади</span>
+        <h1>Ужгород<br>у фотографіях.</h1>
+        <p>
+            Погляньте, яким було наше місто в минулому.
+            Старовинні вулиці, архітектура, замок
+            та життя ужгородців різних епох.
+        </p>
+        <a class="btn" href="/history">
+            ← До історії міста
+        </a>
+    </div>
+
+    <div class="hero-img">
+        <img src="{% static 'main/images/past.jpg' %}"
+             alt="Старовинний Ужгород">
+        <span class="photo-note">
+            Ужгород у минулому
+        </span>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+
+        <div class="section-head">
+            <div>
+                <span class="eyebrow">Фотогалерея</span>
+                <h2>Місто крізь об'єктив часу</h2>
+            </div>
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <img src="{% static 'main/images/zamok.jpg' %}"
+                     alt="Ужгородський замок"
+                     style="width:100%; height:210px; object-fit:cover; border-radius:16px; margin-bottom:16px;">
+                <span class="tag">Архітектура</span>
+                <h3>Ужгородський замок</h3>
+                <p>
+                    Одна з найдавніших і найвідоміших
+                    історичних пам'яток міста.
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'main/images/center.jpg' %}"
+                     alt="Старий центр Ужгорода"
+                     style="width:100%; height:210px; object-fit:cover; border-radius:16px; margin-bottom:16px;">
+                <span class="tag">Вулиці міста</span>
+                <h3>Старий Ужгород</h3>
+                <p>
+                    Історичні вулиці та архітектура,
+                    які зберігають атмосферу минулих століть.
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'main/images/old_river.jpg' %}"
+                     alt="Річка Уж"
+                     style="width:100%; height:210px; object-fit:cover; border-radius:16px; margin-bottom:16px;">
+                <span class="tag">Природа</span>
+                <h3>Річка Уж</h3>
+                <p>
+                    Річка, навколо якої формувалося
+                    та розвивалося місто.
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'main/images/bridge.jpg' %}"
+                     alt="Старий міст в Ужгороді"
+                     style="width:100%; height:210px; object-fit:cover; border-radius:16px; margin-bottom:16px;">
+                <span class="tag">Міське життя</span>
+                <h3>Мости через Уж</h3>
+                <p>
+                    Переправи через річку, які поєднували
+                    різні частини міста.
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'main/images/images.jpg' %}"
+                     alt="Історична будівля Ужгорода"
+                     style="width:100%; height:210px; object-fit:cover; border-radius:16px; margin-bottom:16px;">
+                <span class="tag">Спадщина</span>
+                <h3>Старовинні будівлі</h3>
+                <p>
+                    Архітектурні пам'ятки, які розповідають
+                    про різні періоди історії міста.
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'main/images/life.jpg' %}"
+                     alt="Історична вулиця Ужгорода"
+                     style="width:100%; height:210px; object-fit:cover; border-radius:16px; margin-bottom:16px;">
+                <span class="tag">Минуле</span>
+                <h3>Життя ужгородців</h3>
+                <p>
+                    Фотографії повсякденного життя,
+                    традицій та міських подій минулих років.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="feature">
+            <h2>Історія зберігається у фотографіях</h2>
+            <p>
+                Кожна світлина допомагає побачити,
+                як змінювався Ужгород, його вулиці,
+                будівлі та мешканці.
+            </p>
+            <a class="btn" href="/history/people">
+                Відомі особистості →
+            </a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+
+{% extends 'main/layout.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+    <section class="wrap hero">
+        <div><span class="eyebrow">Міське життя</span>
+            <h1>Новини<br>Ужгорода.</h1>
+            <p>Слідкуй за подіями, рішеннями міської ради, культурними заходами та змінами в житті громади.</p><a
+                    class="btn" href="https://uzhhorod-news.uz.ua/" target="_blank" rel="noopener">Читати місцеве медіа
+                ↗</a></div>
+
+<div class="hero-img">
+    <img src="{% static 'main/images/news.jpg' %}" alt="Події міста та громади">
+    <span class="photo-note">Події міста та громади</span>
+</div>
+    </section>
+    <section class="section">
+        <div class="wrap">
+            <div class="section-head">
+                <div><span class="eyebrow">Місцеві джерела</span>
+                    <h2>Де читати новини</h2></div>
+            </div>
+            <div class="grid">
+                <div class="card"><span class="tag">Міське медіа</span>
+                    <h3>Новини Ужгорода</h3>
+                    <p>Матеріали про міські події, транспорт, комунальні питання та життя громади.</p><a class="btn"
+                                                                                                         href="https://uzhhorod-news.uz.ua/"
+                                                                                                         target="_blank"
+                                                                                                         rel="noopener">Відкрити
+                        сайт ↗</a></div>
+                <div class="card"><span class="tag">Місцевий портал</span>
+                    <h3>Ужгород Ін</h3>
+                    <p>Новини міста й Закарпаття, повідомлення та актуальні теми.</p><a class="btn"
+                                                                                        href="https://uzhgorod.in/"
+                                                                                        target="_blank" rel="noopener">Відкрити
+                        сайт ↗</a></div>
+                <div class="card"><span class="tag">Офіційні повідомлення</span>
+                    <h3>Ужгородська міська рада</h3>
+                    <p>Рішення, оголошення та інформація від органу місцевого самоврядування.</p><a class="btn"
+                                                                                                    href="https://rada-uzhgorod.gov.ua/"
+                                                                                                    target="_blank"
+                                                                                                    rel="noopener">Офіційний
+                        сайт ↗</a></div>
+            </div>
+         </div>
+    </section>
+{% endblock %}
+
+

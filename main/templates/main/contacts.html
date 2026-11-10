@@ -1,0 +1,54 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <section class="wrap hero">
+        <div><span class="eyebrow">Міський довідник</span>
+            <h1>Важливі<br>контакти.</h1>
+            <p>Основні екстрені номери України та контактні дані міської ради Ужгорода. У разі небезпеки телефонуйте до
+                відповідної служби.</p><a class="btn" href="/management">Контакти міської ради ↗</a></div>
+
+                <div class="hero-img">
+    <img src="{% static 'main/images/uzh.jpg' %}" alt="Збережіть номери для швидкого доступу">
+    <span class="photo-note">Збережіть номери для швидкого доступу</span>
+</div>
+    </section>
+    <section class="section">
+        <div class="wrap">
+            <div class="section-head">
+                <div><span class="eyebrow">Екстрені служби</span>
+                    <h2>Телефони допомоги</h2></div>
+            </div>
+            <div class="grid">
+                <div class="card"><span class="tag">Пожежа · порятунок</span>
+                    <h2 style="font-size:2.5rem">101</h2>
+                    <p>ДСНС України</p><a class="btn" href="tel:101">Зателефонувати</a></div>
+                <div class="card"><span class="tag">Поліція</span>
+                    <h2 style="font-size:2.5rem">102</h2>
+                    <p>Національна поліція України</p><a class="btn" href="tel:102">Зателефонувати</a></div>
+                <div class="card"><span class="tag">Медична допомога</span>
+                    <h2 style="font-size:2.5rem">103</h2>
+                    <p>Швидка медична допомога</p><a class="btn" href="tel:103">Зателефонувати</a></div>
+                <div class="card"><span class="tag">Аварійна газова служба</span>
+                    <h2 style="font-size:2.5rem">104</h2>
+                    <p>Повідомлення про витік газу</p><a class="btn" href="tel:104">Зателефонувати</a></div>
+            </div>
+            <div class="feature"><span class="eyebrow">Міська рада</span>
+                <h2>Ужгородська міська рада</h2>
+                <ul class="clean">
+                    <li><strong>Адреса:</strong> 88000, м. Ужгород, площа Поштова, 3</li>
+                    <li><strong>Телефон:</strong> <a href="tel:+380312617071">(0312) 61-70-71</a></li>
+                    <li><strong>Додатковий номер:</strong> <a href="tel:+380312428031">(0312) 42-80-31</a></li>
+                    <li><strong>Email:</strong> <a href="mailto:umr@rada-uzhgorod.gov.ua">umr@rada-uzhgorod.gov.ua</a>
+                    </li>
+                    <li><strong>Офіційний сайт:</strong> <a href="https://rada-uzhgorod.gov.ua/" target="_blank"
+                                                            rel="noopener">rada-uzhgorod.gov.ua ↗</a></li>
+                </ul>
+            </div>
+            <p style="font-size:.85rem">Телефони наведені за відкритими довідковими джерелами. Перед використанням
+                неекстрених контактів перевіряйте актуальність на офіційному сайті.</p></div>
+    </section>
+{% endblock %}
+
