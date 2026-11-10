@@ -9,9 +9,6 @@
             <p>Ужгород — затишне європейське місто на берегах річки Уж, де переплітаються історія, архітектура, культура
                 та особливий закарпатський ритм життя.</p><a class="btn" href="/facts">Відкрити місто <span>↗</span></a>
         </div>
-<!--        <div class="hero-img"-->
-<!--             style="background-image:linear-gradient(180deg,rgba(20,42,33,.02),rgba(20,42,33,.28)),url('https://visit-uzhhorod.itc.gov.ua/wp-content/uploads/2024/06/IMG_9191-1024x683.jpg')">-->
-<!--            <span class="photo-note">Відчуй атмосферу Ужгорода</span></div>-->
         <div class="hero-img">
     <img src="{% static 'main/images/atmosphere.jpg' %}" alt="Відчуй атмосферу Ужгорода">
     <span class="photo-note">Відчуй атмосферу Ужгорода</span>
@@ -23,20 +20,18 @@
                 <div><span class="eyebrow">Навігація</span>
                     <h2>Досліджуй місто</h2></div>
                 <p>Усе важливе — в одному місці.</p></div>
-            <div class="grid">
-                <a class="card" href="/news">
-                    <div class="icon"><img src="{% static 'main/images/facts.svg' %}" alt="факти"></div>
-                    <h3>Новини міста</h3>
-                    <p>Міські події, актуальні повідомлення та посилання на місцеві медіа.</p></a>
-                <a class="card" href="/management">
-                    <div class="icon"><img src="{% static 'main/images/city.svg' %}" alt="місто"></div>
-                    <h3>Керівництво міста</h3>
-                    <p>Міська рада та інформація про очільника громади.</p></a>
-                <a class="card" href="/facts">
-                    <div class="icon"><img src="{% static 'main/images/ser.svg' %}" alt="пошук"></div>
-                    <h3>Факти про Ужгород</h3>
-                    <p>Історія, пам’ятки та цікаві особливості міста над Ужем.</p></a>
-            </div>
+         <div class="grid">
+            {% for card in cards %}
+                <a class="card" href="{{ card.url }}">
+                    <div class="icon">
+                        <img src="{% static 'main/images/' %}{{ card.img }}"
+                             alt="{{ card.title }}">
+                    </div>
+                    <h3>{{ card.title }}</h3>
+                    <p>{{ card.text }}</p>
+                </a>
+            {% endfor %}
+        </div>
             <div class="feature"><span class="eyebrow">Міський довідник</span>
                 <h2>Потрібен важливий номер?</h2>
                 <p>Збережи сторінку контактів — тут зібрані основні екстрені телефони та контакти міської ради.</p><a

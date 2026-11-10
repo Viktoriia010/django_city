@@ -38,80 +38,18 @@
             </div>
         </div>
 
-        <div class="grid">
+         <div class="grid">
+            {% for card in photo_cards %}
+                <div class="card">
+                    <img src="{% static 'main/images/' %}{{ card.img }}"
+                         alt="{{ card.alt }}"
+                         style="width:100%; height:210px; object-fit:cover; border-radius:16px; margin-bottom:16px;">
 
-            <div class="card">
-                <img src="{% static 'main/images/zamok.jpg' %}"
-                     alt="Ужгородський замок"
-                     style="width:100%; height:210px; object-fit:cover; border-radius:16px; margin-bottom:16px;">
-                <span class="tag">Архітектура</span>
-                <h3>Ужгородський замок</h3>
-                <p>
-                    Одна з найдавніших і найвідоміших
-                    історичних пам'яток міста.
-                </p>
-            </div>
-
-            <div class="card">
-                <img src="{% static 'main/images/center.jpg' %}"
-                     alt="Старий центр Ужгорода"
-                     style="width:100%; height:210px; object-fit:cover; border-radius:16px; margin-bottom:16px;">
-                <span class="tag">Вулиці міста</span>
-                <h3>Старий Ужгород</h3>
-                <p>
-                    Історичні вулиці та архітектура,
-                    які зберігають атмосферу минулих століть.
-                </p>
-            </div>
-
-            <div class="card">
-                <img src="{% static 'main/images/old_river.jpg' %}"
-                     alt="Річка Уж"
-                     style="width:100%; height:210px; object-fit:cover; border-radius:16px; margin-bottom:16px;">
-                <span class="tag">Природа</span>
-                <h3>Річка Уж</h3>
-                <p>
-                    Річка, навколо якої формувалося
-                    та розвивалося місто.
-                </p>
-            </div>
-
-            <div class="card">
-                <img src="{% static 'main/images/bridge.jpg' %}"
-                     alt="Старий міст в Ужгороді"
-                     style="width:100%; height:210px; object-fit:cover; border-radius:16px; margin-bottom:16px;">
-                <span class="tag">Міське життя</span>
-                <h3>Мости через Уж</h3>
-                <p>
-                    Переправи через річку, які поєднували
-                    різні частини міста.
-                </p>
-            </div>
-
-            <div class="card">
-                <img src="{% static 'main/images/images.jpg' %}"
-                     alt="Історична будівля Ужгорода"
-                     style="width:100%; height:210px; object-fit:cover; border-radius:16px; margin-bottom:16px;">
-                <span class="tag">Спадщина</span>
-                <h3>Старовинні будівлі</h3>
-                <p>
-                    Архітектурні пам'ятки, які розповідають
-                    про різні періоди історії міста.
-                </p>
-            </div>
-
-            <div class="card">
-                <img src="{% static 'main/images/life.jpg' %}"
-                     alt="Історична вулиця Ужгорода"
-                     style="width:100%; height:210px; object-fit:cover; border-radius:16px; margin-bottom:16px;">
-                <span class="tag">Минуле</span>
-                <h3>Життя ужгородців</h3>
-                <p>
-                    Фотографії повсякденного життя,
-                    традицій та міських подій минулих років.
-                </p>
-            </div>
-
+                    <span class="tag">{{ card.subtitle }}</span>
+                    <h3>{{ card.title }}</h3>
+                    <p>{{ card.text }}</p>
+                </div>
+            {% endfor %}
         </div>
 
         <div class="feature">

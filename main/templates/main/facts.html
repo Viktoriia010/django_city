@@ -3,63 +3,36 @@
 {% load static %}
 {% block content %}
 
-    <section class="wrap hero">
-        <div><span class="eyebrow">Історія · Культура · Архітектура</span>
-            <h1>Ужгород —<br>місто історій.</h1>
-            <p>Місто на перетині культур і епох, із середньовічним замком, старовинними вуличками та знаменитим весняним
-                цвітінням сакур.</p><a class="btn"
-                                       href="https://visit-uzhhorod.itc.gov.ua/2024/03/01/istoriya-uzhgoroda/"
-                                       target="_blank" rel="noopener">Дізнатись більше ↗</a></div>
-<!--        <div class="hero-img"-->
-<!--             style="background-image:linear-gradient(180deg,rgba(20,42,33,.02),rgba(20,42,33,.28)),url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=85')">-->
-<!--            <span class="photo-note">Історичне місто над річкою Уж</span></div>-->
-
-                <div class="hero-img">
-    <img src="{% static 'main/images/sakura.jpg' %}" alt="Історичне місто над річкою Уж">
-    <span class="photo-note">Історичне місто над річкою Уж</span>
-</div>
-    </section>
-    <section class="section">
-        <div class="wrap">
-            <div class="grid">
-                <div class="card">
-                    <div class="icon">⌛</div>
-                    <span class="tag">Історія</span>
-                    <h3>Понад тисячолітня історія</h3>
-                    <p>Ужгород згадується в літописних джерелах під 872 роком; історична назва міста — Унгвар.</p></div>
-                <div class="card">
-                    <div class="icon">〰</div>
-                    <span class="tag">Географія</span>
-                    <h3>Місто на річці Уж</h3>
-                    <p>Назва міста пов’язана з річкою Уж, яка протікає через його територію.</p></div>
-                <div class="card">
-                    <div class="icon">🏰</div>
-                    <span class="tag">Пам’ятка</span>
-                    <h3>Ужгородський замок</h3>
-                    <p>Історична фортеця та один із найвідоміших символів міста.</p></div>
-                <div class="card">
-                    <div class="icon">🌸</div>
-                    <span class="tag">Весна</span>
-                    <h3>Сакури</h3>
-                    <p>Навесні вулиці Ужгорода приваблюють відвідувачів цвітінням японських вишень.</p></div>
-                <div class="card">
-                    <div class="icon">🏡</div>
-                    <span class="tag">Культура</span>
-                    <h3>Багатокультурність</h3>
-                    <p>Історія міста формувалася під впливом української, угорської, словацької та інших культур.</p>
-                </div>
-                <div class="card">
-                    <div class="icon">📍</div>
-                    <span class="tag">Область</span>
-                    <h3>Центр Закарпаття</h3>
-                    <p>Ужгород — адміністративний, культурний та освітній центр Закарпатської області.</p></div>
+<section class="wrap hero">
+    <div><span class="eyebrow">Історія · Культура · Архітектура</span>
+        <h1>Ужгород —<br>місто історій.</h1>
+        <p>Місто на перетині культур і епох, із середньовічним замком, старовинними вуличками та знаменитим весняним
+            цвітінням сакур.</p><a class="btn"
+                                   href="https://visit-uzhhorod.itc.gov.ua/2024/03/01/istoriya-uzhgoroda/"
+                                   target="_blank" rel="noopener">Дізнатись більше ↗</a></div>
+    <div class="hero-img">
+        <img src="{% static 'main/images/sakura.jpg' %}" alt="Історичне місто над річкою Уж">
+        <span class="photo-note">Історичне місто над річкою Уж</span>
+    </div>
+</section>
+<section class="section">
+    <div class="wrap">
+        <div class="grid">
+            {% for card in facts_cards %}
+            <div class="card">
+                <div class="icon">{{ card.icon }}</div>
+                <span class="tag">{{ card.subtitle }}</span>
+                <h3>{{ card.title }}</h3>
+                <p>{{ card.text }}</p>
             </div>
-            <div class="feature"><h2>Місця, які варто побачити</h2>
-                <p>Ужгородський замок · Закарпатський музей народної архітектури та побуту · Горянська ротонда · липова
-                    алея вздовж Ужа.</p><a class="btn" href="https://travel.rada-uzhgorod.gov.ua/?p=1564"
-                                           target="_blank" rel="noopener">Історичні пам’ятки ↗</a></div>
+            {% endfor %}
         </div>
-    </section>
+        <div class="feature"><h2>Місця, які варто побачити</h2>
+            <p>Ужгородський замок · Закарпатський музей народної архітектури та побуту · Горянська ротонда · липова
+                алея вздовж Ужа.</p><a class="btn" href="https://travel.rada-uzhgorod.gov.ua/?p=1564"
+                                       target="_blank" rel="noopener">Історичні пам’ятки ↗</a></div>
+    </div>
+</section>
 {% endblock %}
 
 

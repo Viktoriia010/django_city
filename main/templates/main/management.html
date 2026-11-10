@@ -3,44 +3,41 @@
 {% load static %}
 {% block content %}
 
-    <section class="wrap hero">
-        <div><span class="eyebrow">Місцеве самоврядування</span>
-            <h1>Керівництво<br>міста.</h1>
-            <p>Інформація про Ужгородську міську раду та керівника міста.</p><a class="btn"
-                                                                                href="https://rada-uzhgorod.gov.ua/"
-                                                                                target="_blank" rel="noopener">Сайт
-                міської ради ↗</a></div>
-<!--        <div class="hero-img"-->
-<!--             style="background-image:linear-gradient(180deg,rgba(20,42,33,.02),rgba(20,42,33,.28)),url('https://visit-uzhhorod.itc.gov.ua/wp-content/uploads/2024/02/photo_2024-02-29_11-24-16-768x576.jpg')">-->
-<!--            <span class="photo-note">Ужгород · адміністративний центр області</span></div>-->
+<section class="wrap hero">
+    <div><span class="eyebrow">Місцеве самоврядування</span>
+        <h1>Керівництво<br>міста.</h1>
+        <p>Інформація про Ужгородську міську раду та керівника міста.</p><a class="btn"
+                                                                            href="https://rada-uzhgorod.gov.ua/"
+                                                                            target="_blank" rel="noopener">Сайт
+            міської ради ↗</a></div>
+    <div class="hero-img">
+        <img src="{% static 'main/images/manage.png' %}" alt="Ужгород · адміністративний центр області">
+        <span class="photo-note">Ужгород · адміністративний центр області</span>
+    </div>
+</section>
+<section class="section">
+    <div class="wrap">
+        <div class="grid">
+            {% for card in management_cards %}
+            <div class="card">
+                <span class="tag">{{ card.subtitle }}</span>
 
-        <div class="hero-img">
-    <img src="{% static 'main/images/manage.png' %}" alt="Ужгород · адміністративний центр області">
-    <span class="photo-note">Ужгород · адміністративний центр області</span>
-</div>
-    </section>
-    <section class="section">
-        <div class="wrap">
-            <div class="grid">
-                <div class="card"><span class="tag">Міський голова</span>
-                    <h2 style="font-size:2rem">Богдан Андріїв</h2>
-                    <p>Богдан Євстафійович Андріїв — міський голова Ужгорода.</p><a href="https://rada-uzhgorod.gov.ua/"
-                                                                                    target="_blank" rel="noopener"
-                                                                                    style="color:var(--green);font-weight:700">Офіційна
-                        інформація ↗</a></div>
-                <div class="card"><span class="tag">Орган місцевого самоврядування</span>
-                    <h3>Ужгородська міська рада</h3>
-                    <p>Адреса: 88000, м. Ужгород, площа Поштова, 3.</p>
-                    <p>Електронна пошта: <a href="mailto:umr@rada-uzhgorod.gov.ua">umr@rada-uzhgorod.gov.ua</a></p>
-                </div>
-                <div class="card"><span class="tag">Звернення громадян</span>
-                    <h3>Зв’язок із міською радою</h3>
-                    <p>Для актуальних графіків прийому, контактів відділів та офіційних оголошень звертайтеся до сайту
-                        міської ради.</p><a class="btn" href="https://rada-uzhgorod.gov.ua/" target="_blank"
-                                            rel="noopener">Перейти ↗</a></div>
+                {% if forloop.first %}
+                <h2 style="font-size:2rem">{{ card.title }}</h2>
+                {% else %}
+                <h3>{{ card.title }}</h3>
+                {% endif %}
+
+                <p>{{ card.text }}</p>
+
+                <a class="btn" href="{{ card.url }}" target="_blank" rel="noopener">
+                    {{ card.open }} ↗
+                </a>
             </div>
+            {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}
 
 
